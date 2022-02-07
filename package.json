@@ -5,7 +5,7 @@
   "license": "",
   "scripts": {
     "build": "remix build",
-    "dev": "remix dev",
+    "dev": "pm2-dev ./other/pm2.config.js",
     "postinstall": "remix setup node",
     "deploy": "fly deploy --remote-only",
     "start": "remix-serve build"

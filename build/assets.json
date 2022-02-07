@@ -1,17 +1,17 @@
 {
-  "version": "11475ac9",
+  "version": "a765719a",
   "entry": {
-    "module": "/build/entry.client-CDXIRCD4.js",
+    "module": "/build/entry.client-2J7QUANN.js",
     "imports": [
-      "/build/_shared/chunk-FBJ7M2KA.js",
-      "/build/_shared/chunk-AKSB5QXU.js"
+      "/build/_shared/chunk-LAE5MDMM.js",
+      "/build/_shared/chunk-E7VMOUYL.js"
     ]
   },
   "routes": {
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-XOROI52G.js",
+      "module": "/build/root-EVO3BNW2.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -21,12 +21,12 @@
       "id": "routes/index",
       "parentId": "root",
       "index": true,
-      "module": "/build/routes/index-JMAVEZYE.js",
+      "module": "/build/routes/index-OIFK6VZO.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-11475AC9.js"
+  "url": "/build/manifest-A765719A.js"
 }

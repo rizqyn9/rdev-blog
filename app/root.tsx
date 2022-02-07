@@ -1,3 +1,4 @@
+import * as React from 'react'
 import {
   Links,
   LinksFunction,
@@ -7,15 +8,15 @@ import {
   Scripts,
   ScrollRestoration,
 } from 'remix'
-import type {MetaFunction} from 'remix'
+import type { MetaFunction } from 'remix'
 import tailwindStyles from './styles/tailwind.css'
 
 export const meta: MetaFunction = () => {
-  return {title: 'New Remix App'}
+  return { title: 'New Remix App' }
 }
 
 export const links: LinksFunction = () => {
-  return [{rel: 'stylesheet', href: tailwindStyles}]
+  return [{ rel: 'stylesheet', href: tailwindStyles }]
 }
 
 export default function App() {

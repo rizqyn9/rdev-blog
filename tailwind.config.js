@@ -1,5 +1,5 @@
 const path = require('path')
-const defaultTheme = require('tailwindcss/defaultTheme')
+// const defaultTheme = require('tailwindcss/defaultTheme')
 const fromRoot = p => path.join(__dirname, p)
 
 module.exports = {

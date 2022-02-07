@@ -1,3 +1,5 @@
+import * as React from 'react'
+
 export default function Index() {
   return (
     <div className="h-screen w-screen bg-indigo-800 text-white">

@@ -1,0 +1,3 @@
+function HeroSection() {}
+
+export { HeroSection }

@@ -18,7 +18,10 @@ module.exports = {
       current: 'currentColor',
       white: 'var(--color-white)',
       black: 'var(--color-black)',
-
+      navy: 'var(--color-navy)',
+      purple: 'var(--color-purple)',
+      pink: 'var(--color-pink)',
+      dark: 'var(--color-dark)',
       gray: {
         100: 'var(--color-gray-100)',
         200: 'var(--color-gray-200)',
@@ -94,9 +97,9 @@ module.exports = {
       rotate: {
         '-135': '-135deg',
         135: '135deg',
-      }
       },
     },
+  },
   content: [fromRoot('./app/**/*.+(js|ts|tsx|mdx|md)')],
   plugins: [
     require('@tailwindcss/typography'),

@@ -1,0 +1,190 @@
+:root {
+    --color-black: #000;
+    --color-white: #fff;
+    --color-blue-100: #e8f2ff;
+    --color-blue-500: #4b96ff;
+    --color-blueGray-500: #a9adc1;
+    --color-gray-100: #f7f7f7;
+    --color-gray-200: #e6e9ee;
+    --color-gray-300: #dde0e4;
+    --color-gray-400: #818890;
+    --color-gray-500: #535661;
+    --color-gray-600: #4b4c53;
+    --color-gray-700: #3a3d4a;
+    --color-gray-800: #2e3039;
+    --color-gray-900: #1f2028;
+    --color-green-100: #e7f9ed;
+    --color-green-500: #30c85e;
+    --color-green-600: #68d94a;
+    --color-red-500: #ff4545;
+    --color-yellow-500: #ffd644;
+  
+    --color-team-unknown: #818890;
+    --color-team-blue: #36a3ff;
+    --color-team-red: #ff4545;
+    /* yellow in light mode is... hard */
+    --color-team-yellow: #a08600;
+    --color-yellow-500: #a08600;
+  }
+  
+  .light {
+    --color-team-unknown: var(--color-black);
+    --bg-primary: var(--color-white);
+    --bg-secondary: var(--color-gray-100);
+    --bg-alt: var(--color-gray-200);
+    --border-secondary: var(--color-gray-200);
+    --text-primary: var(--color-black);
+    --text-secondary: var(--color-gray-500);
+  }
+  
+  .dark {
+    --color-team-yellow: #ffd644;
+    --color-yellow-500: #ffd644;
+    --color-team-unknown: var(--color-white);
+    --bg-primary: var(--color-gray-900);
+    --bg-secondary: var(--color-gray-800);
+    --bg-alt: var(--color-gray-700);
+    --border-secondary: var(--color-gray-600);
+    --text-primary: var(--color-white);
+    --text-secondary: var(--color-blueGray-500);
+  }
+  
+  .set-color-team-current-yellow {
+    --color-team-current: var(--color-team-yellow);
+  }
+  
+  .set-color-team-current-red {
+    --color-team-current: var(--color-team-red);
+  }
+  
+  .set-color-team-current-blue {
+    --color-team-current: var(--color-team-blue);
+  }
+  
+  .set-color-team-current-unknown {
+    --color-team-current: var(--color-team-unknown);
+  }
+  
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-text-fill-color: black !important;
+    -webkit-box-shadow: 0 0 0 999px var(--color-gray-100) inset !important;
+    box-shadow: 0 0 0 999px var(--color-gray-100) inset !important;
+    background-clip: content-box !important;
+  }
+  
+  .dark input:-webkit-autofill,
+  .dark input:-webkit-autofill:hover,
+  .dark input:-webkit-autofill:focus,
+  .dark input:-webkit-autofill:active {
+    -webkit-text-fill-color: white !important;
+    -webkit-box-shadow: 0 0 0 999px var(--color-gray-800) inset !important;
+    box-shadow: 0 0 0 999px var(--color-gray-800) inset !important;
+    background-clip: content-box !important;
+  }
+  
+  input:-webkit-autofill::first-line {
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-family: Matter, ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+      'Noto Color Emoji';
+  }
+  
+  /* I kinda feel like this should be the default... 🤷‍♂️ */
+  [hidden] {
+    pointer-events: none;
+  }
+  
+  /* These elements get removed before hydration but they can look funny before hydrating */
+  dark-mode,
+  light-mode {
+    display: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    :focus {
+      transition: outline-offset 0.1s ease;
+      outline-offset: 4px;
+    }
+  }
+  
+  a {
+    color: var(--color-team-current);
+  }
+  
+  .underlined {
+    position: relative;
+    text-decoration: none !important;
+    white-space: nowrap;
+  }
+  
+  .underlined:focus {
+    outline: none;
+    text-decoration: none !important;
+  }
+  
+  .underlined:after {
+    content: '';
+    height: 2px;
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+    transform-origin: left;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    display: block;
+    position: absolute;
+  }
+  
+  .underlined:hover:after,
+  .underlined:focus:after,
+  .active.underlined:after {
+    background-color: currentColor;
+    transform: scaleX(1);
+  }
+  
+  @media (prefers-reduced-motion) {
+    .underlined:after {
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+  
+    .underlined:hover:after,
+    .underlined:focus:after,
+    .active.underlined:after {
+      opacity: 1;
+    }
+  }
+  
+  /* transistor embed has rounded edges with white background 😬 */
+  .dark iframe[src*='transistor'] {
+    border-radius: 8px;
+  }
+  
+  .yt-lite {
+    border-radius: 0.5rem;
+    max-height: 90vh;
+    max-width: 90vw;
+  }
+  /* this is for react-lite-youtube-embed */
+  /* Annoyingly the background image can be a pixel taller than the video in front of it when the video is playing */
+  .lyt-activated {
+    background-image: none !important;
+  }
+  

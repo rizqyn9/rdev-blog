@@ -1,4 +1,4 @@
-# fly.toml file generated for rdev-blog on 2022-02-08T02:16:16+07:00
+# fly.toml file generated for rdev-blog on 2022-02-09T03:24:51+07:00
 
 app = "rdev-blog"
 
@@ -7,7 +7,7 @@ kill_timeout = 5
 processes = []
 
 [env]
-  PORT = "8080"
+  PORT = "3000"
 
 [experimental]
   allowed_public_ports = []
@@ -15,7 +15,7 @@ processes = []
 
 [[services]]
   http_checks = []
-  internal_port = 8080
+  internal_port = 3000
   processes = ["app"]
   protocol = "tcp"
   script_checks = []

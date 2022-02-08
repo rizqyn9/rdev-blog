@@ -3,9 +3,9 @@
  */
 module.exports = {
   appDirectory: 'app',
+  cacheDirectory: './node_modules/.cache/remix',
   assetsBuildDirectory: 'public/build',
   publicPath: '/build/',
   serverBuildDirectory: 'build',
-  devServerPort: 5000,
   ignoredRouteFiles: ['.*'],
 }

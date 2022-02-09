@@ -4,7 +4,8 @@ const fromRoot = p => path.join(__dirname, p)
 
 module.exports = {
   // the NODE_ENV thing is for https://github.com/Acidic9/prettier-plugin-tailwind/issues/29
-  mode: process.env.NODE_ENV ? 'jit' : undefined,
+  // mode: process.env.NODE_ENV ? 'jit' : undefined,
+  mode: 'jit',
   darkMode: 'class',
   theme: {
     screens: {
@@ -65,7 +66,9 @@ module.exports = {
         '-10': '-10',
       },
       fontFamily: {
-        sans: ['Matter', ...defaultTheme.fontFamily.sans],
+        // sans: ['Matter', ...defaultTheme.fontFamily.sans],
+        sans: ['Playfair Display', ...defaultTheme.fontFamily.sans],
+        rowdies: ['Rowdies', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         xl: '1.375rem', // 22px

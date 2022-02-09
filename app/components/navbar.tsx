@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import * as React from 'react'
 import { Link, Links, useLocation } from 'remix'
+import { H1 } from './typography'
 
 const LINKS = [
   { name: 'Home', to: '/' },
@@ -22,7 +23,7 @@ function NavLink({
         className={clsx(
           'underlined block whitespace-nowrap text-lg font-medium hover:text-team-current focus:text-team-current focus:outline-none',
           {
-            'active text-team-current': isSelected,
+            'active text-white': isSelected,
             'text-secondary': !isSelected,
           },
         )}
@@ -42,9 +43,9 @@ function Navbar() {
           <Link
             prefetch="intent"
             to="/"
-            className="text-primary underlined block whitespace-nowrap text-2xl font-medium transition focus:outline-none"
+            className="underlined block whitespace-nowrap text-2xl font-medium transition-all focus:outline-none"
           >
-            <h1>R Dev Studio x Kontol Studio</h1>
+            <H1 className="font-rowdies text-white">R Dev Studio</H1>
           </Link>
         </div>
         <ul className="hidden lg:flex ">

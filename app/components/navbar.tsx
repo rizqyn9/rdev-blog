@@ -21,10 +21,10 @@ function NavLink({
     <li className="leading-2 px-5 py-2 text-xl font-bold">
       <Link
         className={clsx(
-          'underlined block whitespace-nowrap text-lg font-medium hover:text-team-current focus:text-team-current focus:outline-none',
+          'underlined block whitespace-nowrap text-lg font-medium hover:text-white focus:text-white focus:outline-none',
           {
             'active text-white': isSelected,
-            'text-secondary': !isSelected,
+            'text-pink': !isSelected,
           },
         )}
         prefetch="intent"
@@ -45,7 +45,7 @@ function Navbar() {
             to="/"
             className="underlined block whitespace-nowrap text-2xl font-medium transition-all focus:outline-none"
           >
-            <H1 className="font-rowdies text-white">R Dev Studio</H1>
+            <H1 className="font-rowdies text-pink">R Dev Studio</H1>
           </Link>
         </div>
         <ul className="hidden lg:flex ">

@@ -25,10 +25,10 @@ function ButtonInner({
         className={clsx(
           'focus-ring absolute inset-0 transform rounded-full opacity-100 transition disabled:opacity-50',
           {
-            'border-secondary bg-primary border-2 group-hover:border-transparent group-focus:border-transparent':
+            'bg- border-2 border-pink group-hover:border-transparent group-focus:border-white':
               variant === 'secondary' || variant === 'danger',
             danger: variant === 'danger',
-            'bg-inverse': variant === 'primary',
+            'bg-pink': variant === 'primary',
           },
         )}
       />
@@ -37,8 +37,8 @@ function ButtonInner({
         className={clsx(
           'relative flex h-full w-full items-center justify-center whitespace-nowrap',
           {
-            'text-primary': variant === 'secondary',
-            'text-inverse': variant === 'primary',
+            'text-pink': variant === 'secondary',
+            'text-white': variant === 'primary',
             'text-red-500': variant === 'danger',
             'space-x-5 px-11 py-6': size !== 'medium',
             'space-x-3 px-8 py-4': size === 'medium',

@@ -25,7 +25,7 @@ const fontSize = {
 }
 
 const titleColors = {
-  primary: 'text-black dark:text-white',
+  primary: 'text-white dark:text-pink',
   secondary: 'text-gray-400 dark:text-blueGray-500',
 }
 
@@ -87,9 +87,7 @@ function Paragraph({
   ...rest
 }: ParagraphProps) {
   return React.createElement(as, {
-    className: clsx('max-w-full text-lg', textColorClassName, className, {
-      'prose prose-light dark:prose-dark': prose,
-    }),
+    className: clsx('max-w-full text-lg', textColorClassName, className),
     ...rest,
   })
 }

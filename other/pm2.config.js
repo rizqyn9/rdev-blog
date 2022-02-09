@@ -21,7 +21,7 @@ module.exports = {
     //   },
     {
       name: 'Remix',
-      script: 'remix dev',
+      script: 'remix dev --trace-warnings',
       ignore_watch: ['.'],
       env: {
         NODE_ENV: process.env.NODE_ENV ?? 'development',
@@ -30,11 +30,11 @@ module.exports = {
         FORCE_COLOR: '1',
       },
     },
-    // {
-    //   name: 'Content',
-    //   script: 'node ./other/refresh-on-content-changes.js',
-    //   ignore_watch: ['.'],
-    // },
+    {
+      name: 'Content',
+      script: 'node ./other/refresh-on-content-changes.js',
+      ignore_watch: ['.'],
+    },
     {
       name: 'Postcss',
       script: 'postcss styles/**/*.css --base styles --dir app/styles',

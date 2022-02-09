@@ -692,9 +692,29 @@ Ensure the default browser behavior of the `hidden` attribute.
 .prose > :where(:last-child):not(:where([class~="not-prose"] *)) {
   margin-bottom: 0;
 }
+.aspect-h-4 {
+  --tw-aspect-h: 4;
+}
+.aspect-w-3 {
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+  --tw-aspect-w: 3;
+}
+.aspect-w-3 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 /* purgecss end ignore */
 .pointer-events-none {
   pointer-events: none;
+}
+.static {
+  position: static;
 }
 .fixed {
   position: fixed;
@@ -710,6 +730,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 0px;
   bottom: 0px;
   left: 0px;
+}
+.left-6 {
+  left: 1.5rem;
+}
+.top-6 {
+  top: 1.5rem;
 }
 .z-10 {
   z-index: 10;
@@ -728,6 +754,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.mt-4 {
+  margin-top: 1rem;
 }
 .mb-24 {
   margin-bottom: 6rem;
@@ -752,6 +784,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .inline-flex {
   display: inline-flex;
+}
+.table {
+  display: table;
 }
 .grid {
   display: grid;
@@ -789,6 +824,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-auto {
   flex: 1 1 auto;
 }
+.grow {
+  flex-grow: 1;
+}
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -797,6 +835,9 @@ Ensure the default browser behavior of the `hidden` attribute.
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+.resize {
+  resize: both;
 }
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -826,6 +867,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-y-4 {
   row-gap: 1rem;
 }
+.gap-y-16 {
+  row-gap: 4rem;
+}
 .space-x-5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
@@ -841,14 +885,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
+.space-y-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
 .whitespace-nowrap {
   white-space: nowrap;
 }
-.rounded-full {
-  border-radius: 9999px;
-}
 .rounded-lg {
   border-radius: 0.5rem;
+}
+.rounded-full {
+  border-radius: 9999px;
 }
 .border-2 {
   border-width: 2px;
@@ -868,6 +922,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.object-center {
+  -o-object-position: center;
+     object-position: center;
 }
 .px-11 {
   padding-left: 2.75rem;
@@ -920,12 +982,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .font-rowdies {
   font-family: Rowdies, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+.text-xl {
+  font-size: 1.375rem;
+}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-.text-xl {
-  font-size: 1.375rem;
 }
 .text-2xl {
   font-size: 1.5625rem;
@@ -944,6 +1006,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .leading-tight {
   line-height: 1.25;
+}
+.text-blueGray-500 {
+  color: var(--color-blueGray-500);
 }
 .text-pink {
   color: var(--color-pink);
@@ -1180,8 +1245,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
+  .lg\:flex-row {
+    flex-direction: row;
+  }
   .lg\:flex-col {
     flex-direction: column;
+  }
+  .lg\:items-end {
+    align-items: flex-end;
+  }
+  .lg\:justify-between {
+    justify-content: space-between;
   }
   .lg\:gap-x-6 {
     -moz-column-gap: 1.5rem;
@@ -1189,6 +1263,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .lg\:gap-y-6 {
     row-gap: 1.5rem;
+  }
+  .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
   .lg\:px-0 {
     padding-left: 0px;

@@ -1,5 +1,10 @@
-name: Deploy to Fly
-on: [push]
+name: 🚀 Deploy to Fly
+
+on:
+  push:
+    branches:
+      - 'master'
+
 jobs:
   deploy:
     name: Deploy proxy

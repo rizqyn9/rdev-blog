@@ -1,6 +1,10 @@
 import { readFileSync } from 'fs'
 import { join } from 'path'
 import { bundleMDX } from 'mdx-bundler'
+import { remarkCodeBlocksShiki } from '@kentcdodds/md-temp'
+import type * as U from 'unified'
+
+const remarkPlugins: U.PluggableList = [remarkCodeBlocksShiki]
 
 export async function Test(): Promise<{
   code: string
@@ -30,7 +34,7 @@ export async function Test(): Promise<{
           remarkSlug,
           [remarkAutolinkHeadings, { behavior: 'wrap' }],
           gfm,
-          // ...remarkPlugins,
+          ...remarkPlugins,
         ]
         options.rehypePlugins = [
           ...(options.rehypePlugins ?? []),

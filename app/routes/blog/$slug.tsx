@@ -24,7 +24,7 @@ export default function MDXRender() {
   const RblogMdxComponent = useMdxComponent(data.page)
   return (
     <div className="text-white">
-      <article className="prose">
+      <article className="prose-dark prose-light prose">
         <RblogMdxComponent />
       </article>
       <Outlet />

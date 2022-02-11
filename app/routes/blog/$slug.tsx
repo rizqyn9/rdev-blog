@@ -20,13 +20,13 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export default function MDXRender() {
   const data = useLoaderData<LoaderData>()
-  console.log(data.page)
 
-  // const RblogMdxComponent = useMdxComponent(data.page)
+  const RblogMdxComponent = useMdxComponent(data.page)
   return (
     <div className="text-white">
-      {/* <RblogMdxComponent /> */}
-      <H3>Test</H3>
+      <article className="prose">
+        <RblogMdxComponent />
+      </article>
       <Outlet />
     </div>
   )

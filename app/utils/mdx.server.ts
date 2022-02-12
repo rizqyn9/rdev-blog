@@ -2,9 +2,23 @@ import { readFileSync } from 'fs'
 import { join } from 'path'
 import { bundleMDX } from 'mdx-bundler'
 import { remarkCodeBlocksShiki } from '@kentcdodds/md-temp'
-import type * as U from 'unified'
+import * as U from 'unified'
 
-const remarkPlugins: U.PluggableList = [remarkCodeBlocksShiki]
+function removePreContainerDivs() {
+  return async function preContainerDivsTransformer(tree: H.Root) {
+    const { visit } = await import('unist-util-visit')
+    visit(
+      tree,
+      { type: 'element', tagName: 'pre' },
+      function visitor(node, index, parent) {
+        if (parent?.type !== 'element') return
+        if (parent.tagName !== 'div') return
+        if (parent.children.length !== 1 && index === 0) return
+        Object.assign(parent, node)
+      },
+    )
+  }
+}
 
 export async function Test(): Promise<{
   code: string
@@ -15,6 +29,10 @@ export async function Test(): Promise<{
   )
   const { default: remarkSlug } = await import('remark-slug')
   const { default: gfm } = await import('remark-gfm')
+  const { default: rehypeSlug } = await import('rehype-slug')
+  const { default: rehypeAutolinkHeadings } = await import(
+    'rehype-autolink-headings'
+  )
 
   let type = 'blog'
   let slug = 'dummy'
@@ -34,11 +52,20 @@ export async function Test(): Promise<{
           remarkSlug,
           [remarkAutolinkHeadings, { behavior: 'wrap' }],
           gfm,
-          ...remarkPlugins,
+          remarkCodeBlocksShiki,
         ]
         options.rehypePlugins = [
-          ...(options.rehypePlugins ?? []),
-          // ...rehypePlugins,
+          ...(options?.rehypePlugins ?? []),
+          rehypeSlug,
+          [
+            rehypeAutolinkHeadings,
+            {
+              properties: {
+                className: ['hash-anchor'],
+              },
+            },
+          ],
+          // removePreContainerDivs,
         ]
         return options
       },

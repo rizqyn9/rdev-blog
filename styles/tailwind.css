@@ -51,5 +51,6 @@
     .text-inverse {
       @apply text-white dark:text-black;
     }
+    
   }
   

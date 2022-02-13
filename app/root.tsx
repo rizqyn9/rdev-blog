@@ -22,7 +22,7 @@ export const links: LinksFunction = () => {
   return [
     { rel: 'stylesheet', href: tailwindStyles },
     { rel: 'stylesheet', href: appStyles },
-    // { rel: 'stylesheet', href: proseStyles },
+    { rel: 'stylesheet', href: proseStyles },
   ]
 }
 

@@ -1,30 +1,6 @@
 import { readFileSync } from 'fs'
 import { join } from 'path'
 import { bundleMDX } from 'mdx-bundler'
-import type { Options } from 'rehype-pretty-code'
-
-const optionsRehype: Partial<Options> = {
-  // Use one of Shiki's packaged themes
-  //   theme: 'one-dark-pro',
-  theme: JSON.parse(
-    readFileSync(join(process.cwd(), 'contents', 'moonlight.json'), 'utf-8'),
-  ),
-  // Or your own JSON theme
-  onVisitLine(node) {
-    // Prevent lines from collapsing in `display: grid` mode, and allow empty
-    // lines to be copy/pasted
-    if (node.children.length === 0) {
-      node.children = [{ type: 'text', value: ' ' }]
-    }
-  },
-  // Feel free to add classNames that suit your docs
-  onVisitHighlightedLine(node) {
-    node.properties.className.push('highlighted')
-  },
-  onVisitHighlightedWord(node) {
-    node.properties.className = ['word']
-  },
-}
 
 /**
  * Use Dummy MDX File
@@ -35,9 +11,12 @@ async function CompileMDX() {
 
   try {
     const { default: gfm } = await import('remark-gfm')
-    const { default: rehypeHightlight } = await import('rehype-highlight')
-    // const { default: rehypePrism } = await import('rehype-prism-plus')
-    const { default: rehypePretty } = await import('rehype-pretty-code')
+    const { default: rehypePrism } = await import('rehype-prism-plus')
+    const { default: rehypeCodeTitle } = await import('rehype-code-title')
+    const { default: rehypeSlug } = await import('rehype-slug')
+    const { default: rehypeAutoHeadings } = await import(
+      'rehype-autolink-headings'
+    )
 
     const source = readFileSync(
       join(process.cwd(), 'contents', folder, `${slug}.mdx`),
@@ -47,11 +26,20 @@ async function CompileMDX() {
     const compiled = await bundleMDX({
       source,
       xdmOptions(options) {
-        options.remarkPlugins = [...(options.remarkPlugins ?? [])]
+        options.remarkPlugins = [...(options.remarkPlugins ?? []), gfm]
         options.rehypePlugins = [
           ...(options.rehypePlugins ?? []),
-          //   rehypeHightlight,
-          [rehypePretty, optionsRehype],
+          rehypeSlug,
+          rehypeCodeTitle,
+          [rehypePrism, { showLineNumbers: true }],
+          [
+            rehypeAutoHeadings,
+            {
+              properties: {
+                className: ['hash-anchor'],
+              },
+            },
+          ],
         ]
         return options
       },
@@ -69,7 +57,6 @@ export { CompileMDX }
 // import { readFileSync } from 'fs'
 // import { join } from 'path'
 // import { bundleMDX } from 'mdx-bundler'
-// import { remarkCodeBlocksShiki } from '@kentcdodds/md-temp'
 // import * as U from 'unified'
 // import * as mdxBundler from 'mdx-bundler/client'
 

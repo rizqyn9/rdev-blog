@@ -734,6 +734,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .top-6 {
   top: 1.5rem;
 }
+.top-0 {
+  top: 0px;
+}
+.top-2 {
+  top: 0.5rem;
+}
+.right-2 {
+  right: 0.5rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -889,6 +898,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
+.overflow-x-auto {
+  overflow-x: auto;
+}
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -898,11 +910,27 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded-full {
   border-radius: 9999px;
 }
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-b-md {
+  border-bottom-right-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
 .border-2 {
   border-width: 2px;
 }
+.border {
+  border-width: 1px;
+}
+.border-t-0 {
+  border-top-width: 0px;
+}
 .border-pink {
   border-color: var(--color-pink);
+}
+.border-gray-600 {
+  border-color: var(--color-gray-600);
 }
 .bg-dark {
   background-color: var(--color-dark);
@@ -925,6 +953,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   -o-object-position: center;
      object-position: center;
 }
+.p-2 {
+  padding: 0.5rem;
+}
 .px-11 {
   padding-left: 2.75rem;
   padding-right: 2.75rem;
@@ -940,6 +971,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 .py-10 {
   padding-top: 2.5rem;
@@ -960,6 +999,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-9 {
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
+}
+.pt-8 {
+  padding-top: 2rem;
 }
 .pt-4 {
   padding-top: 1rem;
@@ -1033,6 +1075,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-colors {
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1144,6 +1193,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark .text-secondary {
   color: var(--color-blueGray-500);
 }
+.hover\:bg-gray-700:hover {
+  background-color: var(--color-gray-700);
+}
 .hover\:text-white:hover {
   color: var(--color-white);
 }
@@ -1163,6 +1215,24 @@ Ensure the default browser behavior of the `hidden` attribute.
 .group:focus .group-focus\:border-white {
   border-color: var(--color-white);
 }
+.dark .dark\:prose-invert {
+  --tw-prose-body: var(--tw-prose-invert-body);
+  --tw-prose-headings: var(--tw-prose-invert-headings);
+  --tw-prose-lead: var(--tw-prose-invert-lead);
+  --tw-prose-links: var(--tw-prose-invert-links);
+  --tw-prose-bold: var(--tw-prose-invert-bold);
+  --tw-prose-counters: var(--tw-prose-invert-counters);
+  --tw-prose-bullets: var(--tw-prose-invert-bullets);
+  --tw-prose-hr: var(--tw-prose-invert-hr);
+  --tw-prose-quotes: var(--tw-prose-invert-quotes);
+  --tw-prose-quote-borders: var(--tw-prose-invert-quote-borders);
+  --tw-prose-captions: var(--tw-prose-invert-captions);
+  --tw-prose-code: var(--tw-prose-invert-code);
+  --tw-prose-pre-code: var(--tw-prose-invert-pre-code);
+  --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
+  --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
+  --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+}
 .dark .dark\:bg-white {
   background-color: var(--color-white);
 }
@@ -1176,6 +1246,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: var(--color-blueGray-500);
 }
 @media (min-width: 640px) {
+  .md\:block {
+    display: block;
+  }
   .md\:grid-cols-8 {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }

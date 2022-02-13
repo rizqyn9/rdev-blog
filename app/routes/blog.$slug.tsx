@@ -6,6 +6,7 @@ import prismStyles from '../styles/prism-theme.css'
 import { CompileMDX } from '~/utils/mdx.server'
 import { useMdxComponent } from '~/utils/mdx'
 import { MDXComponents } from '~/components/MDXComponents'
+import { Grid } from '~/components/grid'
 
 type LoaderData = {
   code: string
@@ -31,12 +32,13 @@ function Blogs() {
   const Component = useMdxComponent(data.code)
 
   return (
-    <div className="text-pink">
-      <h1>Blogs</h1>
-      <div className="mdx prose mx-auto mt-4 w-full transition-colors dark:prose-invert">
-        {/* @ts-ignore */}
-        <Component components={{ ...MDXComponents }} />
-      </div>
+    <div className="">
+      <Grid className="mdx prose-light prose prose mb-24 ">
+        <div className="col-span-full text-white">
+          {/* @ts-ignore */}
+          <Component components={{ ...MDXComponents }} />
+        </div>
+      </Grid>
     </div>
   )
 }

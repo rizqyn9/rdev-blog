@@ -15,16 +15,15 @@ import { MDXComponents } from '~/components/MDXComponents'
 import { Grid } from '~/components/grid'
 import { BlogType } from '../../types/index'
 import { H1 } from '~/components/typography'
+import { BackLink } from '~/components/ArrrowButton'
 
 type LoaderData = {
   page: BlogType
 }
 
 export const meta: MetaFunction = data => {
-  console.log(JSON.stringify)
-
   return {
-    title: 'asdasd',
+    title: `Blog - ${data.data.frontmatter.title}`,
   }
 }
 
@@ -38,7 +37,10 @@ export const links: LinksFunction = () => {
 export const loader: LoaderFunction = async ({ request }) => {
   const resultMdx = await CompileMDX()
 
+  // return existing slug
   return json(resultMdx)
+
+  // Throw if slug doesnt exist
   // throw json({}, { status: 404 })
 }
 
@@ -48,11 +50,11 @@ export default function Blogs() {
   const Component = useMdxComponent(code)
 
   return (
-    <div className="">
+    <div className="text-white">
       <Grid className="mb-10 mt-24 lg:mb-24">
         <div className="col-span-full flex justify-between lg:col-span-8 lg:col-start-3">
-          Test
-          {/* <BackLink to="/blog">Back to overview</BackLink> */}
+          Test Title
+          <BackLink to="/">Back to overview</BackLink>
           {/* <TeamStats
             totalReads={data.totalReads}
             rankings={data.readRankings}

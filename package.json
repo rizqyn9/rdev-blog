@@ -29,6 +29,7 @@
     "clsx": "^1.1.1",
     "dotenv-cli": "^5.0.0",
     "esbuild": "^0.14.21",
+    "framer-motion": "^6.2.6",
     "mdx-bundler": "^8.0.1",
     "node": "^17.4.0",
     "node-gyp": "^8.4.1",

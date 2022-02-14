@@ -32,8 +32,8 @@ module.exports = {
       },
     },
     {
-      name: 'SCSS',
-      script: 'node-sass -rw ./styles -o ./app/styles',
+      name: 'SCSS 🔥',
+      script: 'yarn dev:scss',
     },
   ],
 }

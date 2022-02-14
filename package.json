@@ -10,6 +10,7 @@
     "build:css": "postcss styles/**/*.css --base styles --dir app/styles",
     "build": "yarn build:css && remix build",
     "dev": "pm2-dev ./other/pm2.config.js",
+    "dev:scss": "node-sass -w ./styles -o ./app/styles",
     "deploy": "fly deploy --remote-only",
     "start": "remix-serve build",
     "prepare": "husky install",

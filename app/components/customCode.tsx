@@ -3,17 +3,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { HiCheckCircle, HiClipboard } from 'react-icons/hi'
 
 export function Pre(props: React.ComponentPropsWithRef<'pre'>) {
-  return (
-    <pre {...props}>
-      {props.children}
-      {/* <style jsx="true">{`
-        pre {
-          position: relative;
-          padding-top: 2.5rem;
-        }
-      `}</style> */}
-    </pre>
-  )
+  return <pre {...props}>{props.children}</pre>
 }
 
 export default function CustomCode(props: React.ComponentPropsWithRef<'code'>) {
@@ -36,9 +26,7 @@ export default function CustomCode(props: React.ComponentPropsWithRef<'code'>) {
 
       {language && (
         <div className="absolute top-0 left-6 rounded-b-md border border-t-0 border-gray-600 px-3 py-1">
-          <span className="from-primary-300 to-primary-400 select-none font-medium text-pink">
-            {language}
-          </span>
+          <span className="select-none font-medium text-pink">{language}</span>
         </div>
       )}
 
@@ -50,7 +38,7 @@ export default function CustomCode(props: React.ComponentPropsWithRef<'code'>) {
             setTimeout(() => setIsCopied(false), 1500)
           }}
         >
-          <button className="absolute top-2 right-2 hidden rounded border border-gray-600 p-2 text-lg transition-colors hover:bg-gray-700 md:block">
+          <button className="absolute top-2 right-2 rounded border border-gray-600 p-2 text-lg transition-colors hover:bg-gray-700 md:block">
             {isCopied ? (
               <HiCheckCircle className="text-green-400" />
             ) : (

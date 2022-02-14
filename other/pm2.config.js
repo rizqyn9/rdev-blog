@@ -1,24 +1,5 @@
 module.exports = {
   apps: [
-    //   {
-    //     name: 'Server',
-    //     script: [
-    //       'node',
-    //       '--inspect',
-    //       '--require ./node_modules/dotenv/config',
-    //       '--require ./mocks',
-    //       './index.js',
-    //     ]
-    //       .filter(Boolean)
-    //       .join(' '),
-    //     watch: ['./mocks/**/*.ts', './index.js', './server/**/*.ts', './.env'],
-    //     env: {
-    //       NODE_ENV: process.env.NODE_ENV ?? 'development',
-    //       ENABLE_TEST_ROUTES: process.env.ENABLE_TEST_ROUTES ?? true,
-    //       RUNNING_E2E: process.env.RUNNING_E2E,
-    //       FORCE_COLOR: '1',
-    //     },
-    //   },
     {
       name: 'Remix',
       script: 'remix dev --trace-warnings',
@@ -49,6 +30,10 @@ module.exports = {
         NODE_ENV: process.env.NODE_ENV ?? 'development',
         FORCE_COLOR: '1',
       },
+    },
+    {
+      name: 'SCSS 🔥',
+      script: 'yarn dev:scss',
     },
   ],
 }

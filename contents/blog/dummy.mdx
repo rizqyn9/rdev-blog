@@ -9,11 +9,9 @@ meta:
     - career
 ---
 
-Test
+# Introduction
 
-# Test
-
-```typescript {1-3,4} showLineNumbers
+```typescript showLineNumbers
 import {generate} from 'todo-test-utils'
 
 describe('todo app', () => {
@@ -23,9 +21,15 @@ describe('todo app', () => {
     cy.visitApp()
   }
 }
-
 ```
 
 # Test
 
-Loremas asdoaosd
+This default sizes are added merely for the sake of convenience.
+
+However, you shouldn't choose heading levels because of the font size. You still
+have to check the content hierarchy.
+
+For example, if you need larger font size for a normal paragraph, you can't use
+h3 because it is not a heading, but you can use p tag with the .h3 class to get
+the same result.

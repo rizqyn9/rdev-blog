@@ -9,9 +9,11 @@ import {
   ScrollRestoration,
 } from 'remix'
 import type { MetaFunction } from 'remix'
-import appStyles from './styles/app.css'
-import tailwindStyles from './styles/tailwind.css'
-import proseStyles from './styles/prose.css'
+import appStyles from '~/styles/app.css'
+import tailwindStyles from '~/styles/tailwind.css'
+import proseStyles from '~/styles/prose.css'
+import mainStyles from '~/styles/main.css'
+
 import { Navbar } from './components/navbar'
 
 export const meta: MetaFunction = () => {
@@ -22,7 +24,8 @@ export const links: LinksFunction = () => {
   return [
     { rel: 'stylesheet', href: tailwindStyles },
     { rel: 'stylesheet', href: appStyles },
-    { rel: 'stylesheet', href: proseStyles },
+    // { rel: 'stylesheet', href: proseStyles },
+    { rel: 'stylesheet', href: mainStyles },
   ]
 }
 

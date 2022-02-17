@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import * as React from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { HiCheckCircle, HiClipboard } from 'react-icons/hi'
@@ -17,7 +18,7 @@ export default function CustomCode(props: React.ComponentPropsWithRef<'code'>) {
   return (
     <code {...props} data-code-type={language && 'code-block'}>
       {language ? (
-        <div ref={textRef} className="overflow-x-auto pt-8">
+        <div ref={textRef} className="overflow-auto pt-8">
           {props.children}
         </div>
       ) : (

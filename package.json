@@ -15,7 +15,8 @@
     "start": "remix-serve build",
     "prepare": "husky install",
     "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|gql|graphql|mdx|vue)\"",
-    "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache --ext js,jsx,ts,tsx ."
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache --ext js,jsx,ts,tsx .",
+    "reactide-server": "webpack-dev-server --config reactide.config.js --mode development --hot"
   },
   "dependencies": {
     "@kentcdodds/md-temp": "^1.1.0",
@@ -33,13 +34,13 @@
     "mdx-bundler": "^8.0.1",
     "node": "^17.4.0",
     "node-gyp": "^8.4.1",
-    "node-sass": "^7.0.1",
     "pm2": "^5.1.2",
     "postcss-import": "^14.0.2",
     "react": "^17.0.2",
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
+    "reactide-config": "^1.0.2",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-code-title": "^1.0.0",
@@ -57,7 +58,6 @@
     "remark-slug": "^7.0.1",
     "remix": "^1.1.3",
     "rimraf": "^3.0.2",
-    "sass": "^1.49.7",
     "shiki": "^0.10.0",
     "tailwindcss": "^3.0.18",
     "unified": "^10.1.1",
@@ -78,7 +78,22 @@
     "postcss-cli": "^9.1.0",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.5",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "@babel/cli": "^7.0.0-beta.40",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0-beta.0",
+    "babel-loader": "^8.0.0-beta.0",
+    "css-loader": "^2.1.1",
+    "file-loader": "^4.0.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.0.0"
   },
   "engines": {
     "node": ">=14"

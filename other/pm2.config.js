@@ -31,9 +31,5 @@ module.exports = {
         FORCE_COLOR: '1',
       },
     },
-    {
-      name: 'SCSS 🔥',
-      script: 'yarn dev:scss',
-    },
   ],
 }

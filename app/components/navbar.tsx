@@ -6,7 +6,7 @@ import { H1 } from './typography'
 const LINKS = [
   { name: 'Home', to: '/' },
   { name: 'Blogs', to: '/blogs' },
-  { name: 'Portfolio', to: 'portfolio' },
+  { name: 'Portfolio', to: '/portfolio' },
 ]
 
 function NavLink({

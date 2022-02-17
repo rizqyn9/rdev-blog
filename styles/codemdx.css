@@ -453,3 +453,9 @@ pre[class*='language-'] {
   display: block;
   padding-left: 1rem;
 }
+
+/*  */
+pre {
+  padding: 0 !important;
+  padding-top: 1rem !important;
+}

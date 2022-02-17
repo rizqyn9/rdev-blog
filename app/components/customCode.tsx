@@ -18,7 +18,7 @@ export default function CustomCode(props: React.ComponentPropsWithRef<'code'>) {
   return (
     <code {...props} data-code-type={language && 'code-block'}>
       {language ? (
-        <div ref={textRef} className="overflow-auto pt-8">
+        <div ref={textRef} className="overflow-auto px-4 pt-8 pb-3">
           {props.children}
         </div>
       ) : (

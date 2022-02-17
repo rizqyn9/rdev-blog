@@ -11,7 +11,7 @@ function HeroSection() {
       {/* has Image */}
       <div className="col-span-full mb-12 flex items-center justify-center lg:col-span-7 lg:col-start-6 lg:mb-0 lg:-mt-24 lg:-mr-5vw lg:px-0">
         <img
-          src={'/dummy.webp'}
+          src={'/dum.png'}
           className="h-auto max-h-[75vh] w-[80%] object-contain"
         />
       </div>

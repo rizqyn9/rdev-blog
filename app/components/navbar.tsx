@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import * as React from 'react'
-import { Link, Links, useLocation } from 'remix'
+import { Link, useLocation } from 'remix'
 import { H1 } from './typography'
 import { useEffect } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
@@ -85,12 +85,12 @@ function MobileMenuList() {
                 duration: shouldReduceMotion ? 0 : 0.15,
                 ease: 'linear',
               }}
-              className="bg-primary flex h-full flex-col overflow-y-scroll border-t border-gray-200 pb-12 dark:border-gray-600"
+              className="flex h-full flex-col overflow-y-scroll border-t border-gray-200 bg-dark pb-12 dark:border-gray-600"
             >
-              <MenuItems className="border-none bg-transparent p-0">
+              <MenuItems className="flex flex-col border-none bg-transparent p-0">
                 {MOBILE_LINKS.map(link => (
                   <MenuLink
-                    className="hover:bg-secondary focus:bg-secondary text-primary border-b border-gray-200 px-5vw py-9 hover:text-team-current dark:border-gray-600"
+                    className="border-b border-gray-200 px-5vw py-9 text-xl text-white hover:bg-pink hover:text-white focus:bg-pink dark:border-gray-600"
                     key={link.to}
                     as={Link}
                     to={link.to}
@@ -136,7 +136,10 @@ function MobileMenu() {
         const state = isExpanded ? 'open' : 'closed'
         return (
           <>
-            <MenuButton className="focus:border-primary hover:border-primary border-secondary text-primary inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 transition focus:outline-none">
+            <MenuButton
+              className="border-secondary inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 text-white transition hover:border-pink focus:border-pink focus:outline-none"
+              style={{ color: 'white' }}
+            >
               <svg
                 width="32"
                 height="32"

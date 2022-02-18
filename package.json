@@ -19,7 +19,6 @@
     "reactide-server": "webpack-dev-server --config reactide.config.js --mode development --hot"
   },
   "dependencies": {
-    "@kentcdodds/md-temp": "^1.1.0",
     "@octokit/plugin-throttling": "^3.5.2",
     "@octokit/rest": "^18.12.0",
     "@reach/menu-button": "^0.16.2",

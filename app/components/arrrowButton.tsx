@@ -2,9 +2,9 @@ import clsx from 'clsx'
 import { ReactNode } from 'react'
 import { Link, LinkProps } from 'remix'
 import { motion, useReducedMotion, Variant } from 'framer-motion'
-import { H1, H3 } from './typography'
+import { H1, H3, H6 } from './typography'
 import { useElementState, ElementState } from './hooks/useELemetState'
-import { ArrowIconProps } from './arrowIcon'
+import { ArrowIcon, ArrowIconProps } from './arrowIcon'
 
 const LinkMotion = motion(Link)
 
@@ -24,13 +24,19 @@ const BackLink = ({
     <LinkMotion
       to={to}
       className={clsx(
-        'underlined block whitespace-nowrap text-lg font-medium hover:text-white focus:text-white focus:outline-none',
+        'flex space-x-4 underline-offset-4 transition-all hover:underline focus:outline-none',
         className,
       )}
       animate={state}
       transition={shouldReduceMotion ? { duration: 0 } : {}}
     >
-      <motion.span>back</motion.span>
+      <motion.span
+        variants={shouldReduceMotion ? {} : arrowVariants.left}
+        transition={shouldReduceMotion ? { duration: 0 } : {}}
+      >
+        <ArrowIcon direction="left" />
+      </motion.span>
+      <H6 as="span">{children}</H6>
     </LinkMotion>
   )
 }

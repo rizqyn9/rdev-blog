@@ -14,7 +14,7 @@ import { useMdxComponent } from '~/utils/mdx'
 import { MDXComponents } from '~/components/MDXComponents'
 import { Grid } from '~/components/grid'
 import { BlogType } from '../../types/index'
-import { H1 } from '~/components/typography'
+import { H1, H2, H6 } from '~/components/typography'
 import { BackLink } from '~/components/ArrrowButton'
 
 type LoaderData = {
@@ -53,7 +53,6 @@ export default function Blogs() {
     <div className="text-white">
       <Grid className="mb-10 mt-24 lg:mb-24">
         <div className="col-span-full flex justify-between lg:col-span-8 lg:col-start-3">
-          Test Title
           <BackLink to="/">Back to overview</BackLink>
           {/* <TeamStats
             totalReads={data.totalReads}
@@ -61,6 +60,15 @@ export default function Blogs() {
             direction="down"
             pull="right"
           /> */}
+        </div>
+      </Grid>
+
+      <Grid className="mb-10 mt-24 lg:mb-24">
+        <div className="col-span-full lg:col-span-9 lg:col-start-3">
+          <H2>{frontmatter.title}</H2>
+          <H6 as={'p'} className="mt-2">
+            12 Desember 2000
+          </H6>
         </div>
       </Grid>
 

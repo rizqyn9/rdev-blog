@@ -85,12 +85,12 @@ function MobileMenuList() {
                 duration: shouldReduceMotion ? 0 : 0.15,
                 ease: 'linear',
               }}
-              className="flex h-full flex-col overflow-y-scroll border-t border-gray-200 bg-dark pb-12 dark:border-gray-600"
+              className="flex h-full flex-col overflow-y-scroll border-t border-pink bg-dark pb-12 "
             >
               <MenuItems className="flex flex-col border-none bg-transparent p-0">
                 {MOBILE_LINKS.map(link => (
                   <MenuLink
-                    className="border-b border-gray-200 px-5vw py-9 text-xl text-white hover:bg-pink hover:text-white focus:bg-pink dark:border-gray-600"
+                    className="border-b border-pink px-5vw py-9 text-xl text-white hover:bg-pink hover:text-white focus:bg-pink "
                     key={link.to}
                     as={Link}
                     to={link.to}
